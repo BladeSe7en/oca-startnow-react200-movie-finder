@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '/../dist')));
 app.listen(8888);
 
 const url = 'http://localhost:8888';
-
+const url1 = 'http://localhost:8888/#/movie/tt0800369';
 
 describe('express', () => {
   beforeEach(() => {
@@ -66,5 +66,36 @@ describe('express', () => {
       expect(btn).to.exist;
     })).timeout(20000);
     
-});
+    it('should have a <p> element titled Movie Title:', () =>
+    nightmare
+      .goto(url1)
+      .evaluate(() => document.querySelector('p').innerText)
+      .end()
+      .then((text) => {
+        expect(text).to.equal('Movie Title:');
+      })
+    );
 
+    it('should have a <p> element  movie title', () =>
+    nightmare
+      .goto(url1)
+      .evaluate(() => document.querySelector('p').innerText)
+      .end()
+      .then((text) => {
+        expect(text).to.equal('Movie Title:');
+      })
+    );
+
+    it('should have a className of card-header', () =>
+    nightmare
+      .goto(url)
+      .evaluate(() => document.getElementsByClassName('card-header'))
+      .end()
+      .then((text) => {
+        expect(text).to.exist;
+      })
+    );
+
+
+
+});

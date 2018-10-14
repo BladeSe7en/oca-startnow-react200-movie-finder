@@ -29,7 +29,7 @@ class MovieDetailContainer extends React.Component {
                                         <p className='card-text>'>Plot: {detail.Plot}</p>
                                         <p>{detail.Awards}</p>
                                         <p>MetaScore: {detail.Metascore}</p>
-                                        <p>IMDB: {detail.imdbRating}</p>
+                                        <p className='card-text' >IMDB: {detail.imdbRating}</p>
 
                                         <Link to='/' name='return-link' className='back-link'>
                                             Go back
