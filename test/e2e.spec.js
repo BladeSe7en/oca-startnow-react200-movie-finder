@@ -4,6 +4,7 @@ const path = require('path');
 const Nightmare = require('nightmare');
 const expect = require('chai').expect;
 const axios = require('axios');
+import React from 'react';
 
 let nightmare;
 
@@ -24,13 +25,46 @@ describe('express', () => {
   it('should have the correct page title', () =>
     nightmare
       .goto(url)
-      .evaluate(() => document.querySelector('body').innerText)
+      .evaluate(() => document.querySelector('h1').innerText)
       .end()
       .then((text) => {
-        expect(text).to.equal('Hello World');
+        expect(text).to.equal('Movie Finder');
       })
   );
+  it("should have a button that displays more details about the movie", () =>
+  nightmare
+    .goto(url)
+    .evaluate(() => document.getElementsByClassName("details"))
+    .end()
+    .then(btn => {
+      expect(btn).to.exist;
+    })).timeout(20000);
 
   it('returns the correct status code', () => axios.get(url)
     .then(response => expect(response.status === 200)));
+
+      it("should have a button that performs an axios calls", () =>
+    nightmare
+      .goto(url)
+      .evaluate(() => document.getElementsByClassName("btn"))
+      .end()
+      .then(btn => {
+        expect(btn).to.exist;
+      })).timeout(20000);
+
+      it("should respond with an array of movies", () =>
+      axios.get(url).then(response => expect(response.data == Array)));
+
+      it('should load successfully', () => axios.get(url).then(r => expect(r.status === 200)));
+
+     it('should have a card title of movie details', () =>
+     nightmare
+     .goto(url)
+    .evaluate(() => document.getElementsByClassName("details"))
+    .end()
+    .then(btn => {
+      expect(btn).to.exist;
+    })).timeout(20000);
+    
 });
+

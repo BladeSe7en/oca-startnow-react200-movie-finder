@@ -65,7 +65,7 @@ class MovieSearchContainer extends React.Component {
                                                     <p className='card-text>'>{listMovie.Title}</p>
                                                     <p className='card-text>'>{listMovie.Year}</p>
 
-                                                    <Link to={`/movie/${listMovie.imdbID}`} className='btn btn-outline-secondary' type='button'
+                                                    <Link to={`/movie/${listMovie.imdbID}`} className='btn details btn-outline-secondary' type='button'
                                                         value={listMovie.imdbID} onClick={() => this.handleLink(listMovie.imdbID)} >
                                                         More Information </Link>
                                                 </div>

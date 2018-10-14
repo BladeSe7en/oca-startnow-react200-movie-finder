@@ -30,7 +30,7 @@ class MovieDetailContainer extends React.Component {
                                         <p>{detail.Awards}</p>
                                         <p>MetaScore: {detail.Metascore}</p>
                                         <p>IMDB: {detail.imdbRating}</p>
-                                        
+
                                         <Link to='/' name='return-link' className='back-link'>
                                             Go back
                                         </Link>
