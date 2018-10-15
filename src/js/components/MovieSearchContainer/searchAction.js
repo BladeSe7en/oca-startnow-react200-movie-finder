@@ -17,9 +17,9 @@ export function fetchMovie(input) {
 
 
 export function getMovie(value) {
-    var str = input.replace(/\s/g,'+');
+    console.log(value);
     return {
         type: 'GET_MOVIE_DETAIL',
-        payload: axios.get(`/api/${value}`)
+        payload: axios.get(`/api2/${value}`)
     }
 }

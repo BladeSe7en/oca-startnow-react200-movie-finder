@@ -14,11 +14,13 @@ app.get('/api/:str', (req,res) => {
         (`http://www.omdbapi.com/?s=${req.params.str}&apikey=${process.env.OMDb_API}`)
       )
       .then(response => res.send(response.data));
-    });
-      app.get('/api/:str', (req,res) => {
-        axios.get(
-            (`http://www.omdbapi.com/?i=${req.params.str}&apikey=${process.env.OMDb_API}`)
-          )
-          .then(response => res.send(response.data));
-    })
+});
+
+
+app.get('/api2/:str', (req,res) => {
+    axios.get(
+        (`http://www.omdbapi.com/?i=${req.params.str}&apikey=${process.env.OMDb_API}`)
+        )
+        .then(response => res.send(response.data));
+})
 module.exports = app;
