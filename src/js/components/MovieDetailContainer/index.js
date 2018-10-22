@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect }          from 'react-redux';
 import MovieDetailContainer from './MovieDetailContainer';
 
 function mapStoreToProps(store){

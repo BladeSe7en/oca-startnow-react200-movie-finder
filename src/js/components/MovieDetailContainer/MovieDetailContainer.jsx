@@ -1,4 +1,4 @@
-import React from 'react';
+import React    from 'react';
 import { Link } from 'react-router-dom';
 
 class MovieDetailContainer extends React.Component {
@@ -11,13 +11,11 @@ class MovieDetailContainer extends React.Component {
         console.log('this is this.props: ', this.props)
         return (
             <div className='container'>
-
                 <div id={'movie'}>
                     <div className='card'>
                         <div className='card-header'>Movie Details</div>
                         <div className='card-body'>
                             <div className='col'>
-
                                 <img className='rounded float-left img-thumbnail' src={detail.Poster} />
                             </div>
                             <div className='col'>
@@ -30,7 +28,6 @@ class MovieDetailContainer extends React.Component {
                                         <p>{detail.Awards}</p>
                                         <p>MetaScore: {detail.Metascore}</p>
                                         <p className='card-text' >IMDB: {detail.imdbRating}</p>
-
                                         <Link to='/' name='return-link' className='back-link'>
                                             Go back
                                         </Link>

@@ -1,12 +1,11 @@
 const initalstate = {
-  input: '',
-  listMovies: [],
-  detail: {},
-  error: null
+  input         : '',
+  listMovies    : [],
+  detail        : {},
+  error         : null
 };
 
 function searchReducer(state = initalstate, action) {
-  let listMovies;
   const { type, payload } = action;
   switch (type) {
       case 'ADD_SEARCH_INPUT': 

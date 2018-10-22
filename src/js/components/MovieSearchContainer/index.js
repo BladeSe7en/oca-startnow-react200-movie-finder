@@ -1,11 +1,11 @@
-import { connect } from 'react-redux';
+import { connect }          from 'react-redux';
 import MovieSearchContainer from './MovieSearchContainer';
 
 function mapStoreToProps(store){
     return {
-        input: store.search.input,
-        listMovies: store.search.listMovies,
-        detail: store.search.detail
+        input       : store.search.input,
+        listMovies  : store.search.listMovies,
+        detail      : store.search.detail
     };
 }
 

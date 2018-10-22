@@ -8,7 +8,6 @@ import App from './app';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-
 /* eslint-disable no-underscore-dangle */
 const store = createStore(rootReducer, composeEnhancers(
   applyMiddleware(
@@ -16,7 +15,6 @@ const store = createStore(rootReducer, composeEnhancers(
   )
 ));
 /* eslint-enable */
-
 
 render(
   <Provider store={ store }>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React    from 'react';
 import { addSearchInput, fetchMovie, getMovie } from './searchAction';
 import { Link } from 'react-router-dom';
 
@@ -7,13 +7,13 @@ class MovieSearchContainer extends React.Component {
         super(props);
         this.handleInput = this.handleInput.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.handleLink = this.handleLink.bind(this);
+        this.handleLink  = this.handleLink.bind(this);
     }
 
     handleInput(e) {
         e.preventDefault();
         const { dispatch } = this.props;
-        const { value } = e.target;
+        const { value }   = e.target;
         dispatch(addSearchInput(value));
     }
 
@@ -29,7 +29,7 @@ class MovieSearchContainer extends React.Component {
     }
 
     render() {
-        const { input, listMovies, detail } = this.props;
+        const { input, listMovies } = this.props;
 
         return (
             <div>
@@ -64,7 +64,6 @@ class MovieSearchContainer extends React.Component {
                                                 <div className='card-body'>
                                                     <p className='card-text>'>{listMovie.Title}</p>
                                                     <p className='card-text>'>{listMovie.Year}</p>
-
                                                     <Link to={`/movie/${listMovie.imdbID}`} className='btn details btn-outline-secondary' type='button'
                                                         value={listMovie.imdbID} onClick={() => this.handleLink(listMovie.imdbID)} >
                                                         More Information </Link>

@@ -1,4 +1,3 @@
-
 import { combineReducers } from 'redux';
 import searchReducer from './components/MovieSearchContainer/searchReducer';
 
